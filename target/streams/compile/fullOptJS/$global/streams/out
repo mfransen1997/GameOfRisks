@@ -1,0 +1,20 @@
+[0m[[0minfo[0m] [0mFull Optimizing /home/matt/Documents/Scala/GOR/target/scala-2.11/game-of-risks-opt.js[0m
+[0m[[0mdebug[0m] [0mLinker: Read info: 94677 us[0m
+[0m[[0mdebug[0m] [0mLinker: Compute reachability: 94050 us[0m
+[0m[[0mdebug[0m] [0mLinker: Assemble LinkedClasses: 203605 us[0m
+[0m[[0mdebug[0m] [0mLinker: cache stats: reused: 0 -- invalidated: 3756 -- trees read: 247[0m
+[0m[[0mdebug[0m] [0mLinker: 397335 us[0m
+[0m[[0mdebug[0m] [0mInc. optimizer: Batch mode: true[0m
+[0m[[0mdebug[0m] [0mInc. optimizer: Incremental part: 86596 us[0m
+[0m[[0mdebug[0m] [0mInc. optimizer: Optimizing 719 methods.[0m
+[0m[[0mdebug[0m] [0mInc. optimizer: Optimizer part: 368669 us[0m
+[0m[[0mdebug[0m] [0mInc. optimizer: 459519 us[0m
+[0m[[0mdebug[0m] [0mRefiner: Compute reachability: 76257 us[0m
+[0m[[0mdebug[0m] [0mRefiner: Assemble LinkedClasses: 5518 us[0m
+[0m[[0mdebug[0m] [0mRefiner: 83144 us[0m
+[0m[[0mdebug[0m] [0mEmitter: Class tree cache stats: reused: 0 -- invalidated: 53[0m
+[0m[[0mdebug[0m] [0mEmitter: Method tree cache stats: resued: 0 -- invalidated: 120[0m
+[0m[[0mdebug[0m] [0mEmitter (write output): 202659 us[0m
+[0m[[0minfo[0m] [0mClosure: 0 error(s), 0 warning(s)[0m
+[0m[[0mdebug[0m] [0mClosure: Compiler pass: 4207168 us[0m
+[0m[[0mdebug[0m] [0mClosure: Write result: 188445 us[0m

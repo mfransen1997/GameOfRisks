@@ -1,0 +1,18 @@
+version
+update
+exit;
+exit
+sbt eclipse
+eclipse
+exit
+eclipse
+run
+set scalaJSStage in Global := FastOptStage
+run
+last
+run
+fastOptJS
+reload
+fastOptJS
+fullOptJS
+exit

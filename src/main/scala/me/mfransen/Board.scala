@@ -7,14 +7,15 @@ class Board(game : Game) {
       if(tile.special)
         game.context.drawImage(game.assets.assets("tile-special"), tile.x, tile.y, 64, 64)
       else {
+        game.context.drawImage(game.assets.assets("tile"), tile.x, tile.y, 64, 64)
         game.context.beginPath()
         game.context.rect(tile.x,tile.y,64,64)
         game.context.lineWidth=1
-        if(tile.owner==(0-1))
-          game.context.fillStyle = "gray"
-        else
+        if(tile.owner!=(0-1)) {
           game.context.fillStyle = game.players(tile.owner).color
-        game.context.fill()
+          game.context.fill()
+        }
+
         game.context.stroke()
       }
       game.context.lineWidth=1

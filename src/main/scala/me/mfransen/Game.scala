@@ -32,7 +32,7 @@ class Game(window :Window) {
   }
   def loadQuestion(): Unit = {
     questions :+= new Question(this,"Approximately how many deaths are caused by smoking each year in the United States?(\"Health Effects\")","480,000,000","480","480,000","48,000","c")
-    questions :+= new Question(this,"How many more people have people died from premature smoking than all the US wars?(\"Health Effects\")","3 times as many","5 times","10 times","20 times", "c");
+    questions :+= new Question(this,"How many more people have died from premature smoking than all the US wars combined?(\"Health Effects\")","3 times as many","5 times","10 times","20 times", "c");
     questions :+= new Question(this,"About how many deaths from COPD are caused by smoking?(\"Health Effects\")","8 out of 10","25%","1/3","2","a")
     questions :+= new Question(this,"Smoking is estimated to increase the risk for stroke by(\"Health Effects\")","1-2 times","2-3 times","3-4 times","2-4 times","d")
     questions :+= new Question(this,"Just after x many year(s) of smoking risk of heart attack your risk of heart attack drops sharply(\"Health Effects\")","2","1","4","5","b")
@@ -41,7 +41,7 @@ class Game(window :Window) {
     questions :+= new Question(this,"What BMI is considered overweight(\"Do\")","17","27","30","50","b")
     questions :+= new Question(this,"What is the \"Target\" BMI(\"Do\")","13.4-12","12-18.5","18.5-24.9","24.9-50","c")
     questions :+= new Question(this,"What is the \"Target\" Blood Pressure? (\"Do\")","60/20 mm Hg","120/30 mm Hg","160/80 mm Hg","120/80 mm Hg","d")
-    questions :+= new Question(this, "Overweight increases the risk of ischemic stroke by what percent? (\"Health Risks\")","22%","32%","15%","58%","a")
+    questions :+= new Question(this, "Being overweight increases the risk of ischemic stroke by what percent? (\"Health Risks\")","22%","32%","15%","58%","a")
     questions :+= new Question(this, "Which of the following can cause high blood pressure?(\"copy\")","Overweight","alcohol consumption","lack of physical exercise","all of the above","d")
   }
   def cyclePlayer(initial :Int): Boolean = {

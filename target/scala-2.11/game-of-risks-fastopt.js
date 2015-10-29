@@ -1169,19 +1169,22 @@ $c_Lme_mfransen_Board.prototype.draw__V = (function() {
       var x$3 = tile.y$1;
       qual$1["drawImage"](x$1, x$2, x$3, 64.0, 64.0)
     } else {
+      var qual$2 = this.me$mfransen$Board$$game$f.context$1;
+      var x$10 = this.me$mfransen$Board$$game$f.assets$1.assets$1.apply__O__O("tile");
+      var x$11 = tile.x$1;
+      var x$12 = tile.y$1;
+      qual$2["drawImage"](x$10, x$11, x$12, 64.0, 64.0);
       this.me$mfransen$Board$$game$f.context$1["beginPath"]();
       this.me$mfransen$Board$$game$f.context$1["rect"](tile.x$1, tile.y$1, 64.0, 64.0);
       this.me$mfransen$Board$$game$f.context$1["lineWidth"] = 1.0;
-      if ((tile.owner$1 === (-1))) {
-        this.me$mfransen$Board$$game$f.context$1["fillStyle"] = "gray"
-      } else {
+      if ((tile.owner$1 !== (-1))) {
         var jsx$1 = this.me$mfransen$Board$$game$f.context$1;
-        var this$5 = this.me$mfransen$Board$$game$f.players$1;
+        var this$4 = this.me$mfransen$Board$$game$f.players$1;
         var idx = tile.owner$1;
-        var s = $as_Lme_mfransen_Player($s_scm_ResizableArray$class__apply__scm_ResizableArray__I__O(this$5, idx)).color$1;
-        jsx$1["fillStyle"] = s
+        var s = $as_Lme_mfransen_Player($s_scm_ResizableArray$class__apply__scm_ResizableArray__I__O(this$4, idx)).color$1;
+        jsx$1["fillStyle"] = s;
+        this.me$mfransen$Board$$game$f.context$1["fill"]()
       };
-      this.me$mfransen$Board$$game$f.context$1["fill"]();
       this.me$mfransen$Board$$game$f.context$1["stroke"]()
     };
     this.me$mfransen$Board$$game$f.context$1["lineWidth"] = 1.0;
@@ -1384,7 +1387,7 @@ $c_Lme_mfransen_Game.prototype.loadQuestion__V = (function() {
   var bf = this$1.ReusableCBFInstance$2;
   this.questions$1 = $as_scm_ArrayBuffer($s_sc_SeqLike$class__$$colon$plus__sc_SeqLike__O__scg_CanBuildFrom__O(this$2, elem, bf));
   var this$4 = this.questions$1;
-  var elem$1 = new $c_Lme_mfransen_Question().init___Lme_mfransen_Game__T__T__T__T__T__T(this, "How many more people have people died from premature smoking than all the US wars?(\"Health Effects\")", "3 times as many", "5 times", "10 times", "20 times", "c");
+  var elem$1 = new $c_Lme_mfransen_Question().init___Lme_mfransen_Game__T__T__T__T__T__T(this, "How many more people have died from premature smoking than all the US wars combined?(\"Health Effects\")", "3 times as many", "5 times", "10 times", "20 times", "c");
   var this$3 = $m_scm_ArrayBuffer$();
   var bf$1 = this$3.ReusableCBFInstance$2;
   this.questions$1 = $as_scm_ArrayBuffer($s_sc_SeqLike$class__$$colon$plus__sc_SeqLike__O__scg_CanBuildFrom__O(this$4, elem$1, bf$1));
@@ -1429,7 +1432,7 @@ $c_Lme_mfransen_Game.prototype.loadQuestion__V = (function() {
   var bf$9 = this$19.ReusableCBFInstance$2;
   this.questions$1 = $as_scm_ArrayBuffer($s_sc_SeqLike$class__$$colon$plus__sc_SeqLike__O__scg_CanBuildFrom__O(this$20, elem$9, bf$9));
   var this$22 = this.questions$1;
-  var elem$10 = new $c_Lme_mfransen_Question().init___Lme_mfransen_Game__T__T__T__T__T__T(this, "Overweight increases the risk of ischemic stroke by what percent? (\"Health Risks\")", "22%", "32%", "15%", "58%", "a");
+  var elem$10 = new $c_Lme_mfransen_Question().init___Lme_mfransen_Game__T__T__T__T__T__T(this, "Being overweight increases the risk of ischemic stroke by what percent? (\"Health Risks\")", "22%", "32%", "15%", "58%", "a");
   var this$21 = $m_scm_ArrayBuffer$();
   var bf$10 = this$21.ReusableCBFInstance$2;
   this.questions$1 = $as_scm_ArrayBuffer($s_sc_SeqLike$class__$$colon$plus__sc_SeqLike__O__scg_CanBuildFrom__O(this$22, elem$10, bf$10));
@@ -4662,7 +4665,8 @@ function $c_Lme_mfransen_Launcher$() {
   $c_O.call(this);
   this.windowHTML$1 = null;
   this.game$1 = null;
-  this.players$1 = null
+  this.players$1 = null;
+  this.codes$1 = null
 }
 $c_Lme_mfransen_Launcher$.prototype = new $h_O();
 $c_Lme_mfransen_Launcher$.prototype.constructor = $c_Lme_mfransen_Launcher$;
@@ -4676,6 +4680,34 @@ $c_Lme_mfransen_Launcher$.prototype.init___ = (function() {
   this.windowHTML$1 = "<html><head><title>Game of Risks</title></head><body style='margin: 0; padding: 0'><canvas id='game' style='margin: 0; padding: 0' width='640', height='640'></canvas></body></html>";
   this.game$1 = null;
   this.players$1 = $as_scm_ArrayBuffer($m_scm_ArrayBuffer$().apply__sc_Seq__sc_GenTraversable($m_sci_Nil$()));
+  $m_scm_ArrayBuffer$();
+  var array = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f"];
+  if (($uI(array["length"]) === 0)) {
+    var jsx$1 = new $c_scm_ArrayBuffer().init___()
+  } else {
+    var b = new $c_scm_ArrayBuffer().init___();
+    var n = $uI(array["length"]);
+    var n$1 = ((b.size0$6 + n) | 0);
+    $s_scm_ResizableArray$class__ensureSize__scm_ResizableArray__I__V(b, n$1);
+    var xs = b.array$6;
+    var start = b.size0$6;
+    var i = 0;
+    var j = start;
+    var $$this = $uI(array["length"]);
+    var $$this$1 = (($$this < n) ? $$this : n);
+    var that = ((xs.u["length"] - start) | 0);
+    var end = (($$this$1 < that) ? $$this$1 : that);
+    while ((i < end)) {
+      var jsx$2 = j;
+      var index = i;
+      xs.u[jsx$2] = array[index];
+      i = ((1 + i) | 0);
+      j = ((1 + j) | 0)
+    };
+    b.size0$6 = ((b.size0$6 + n) | 0);
+    var jsx$1 = b
+  };
+  this.codes$1 = jsx$1;
   return this
 });
 $c_Lme_mfransen_Launcher$.prototype.$$js$exported$meth$addPlayer__Lorg_scalajs_dom_raw_MouseEvent__O = (function(event) {
@@ -4722,11 +4754,29 @@ $c_Lme_mfransen_Launcher$.prototype.prompt__I__V = (function(message) {
 $c_Lme_mfransen_Launcher$.prototype.addPlayer__Lorg_scalajs_dom_raw_MouseEvent__V = (function(event) {
   var select = $g["document"]["getElementById"]("player-color");
   var name = $g["document"]["getElementById"]("player-name");
-  var this$2 = this.players$1;
-  var elem = new $c_Lme_mfransen_Player().init___Lme_mfransen_Game__T__T__I__I(null, $as_T(name["value"]), $as_T(select["options"][$uI(select["selectedIndex"])]["text"]), 32, 32);
-  var this$1 = $m_scm_ArrayBuffer$();
-  var bf = this$1.ReusableCBFInstance$2;
-  this.players$1 = $as_scm_ArrayBuffer($s_sc_SeqLike$class__$$colon$plus__sc_SeqLike__O__scg_CanBuildFrom__O(this$2, elem, bf));
+  var elem = $as_T(select["options"][$uI(select["selectedIndex"])]["text"]);
+  var elem$1 = null;
+  elem$1 = elem;
+  if (($as_T(elem$1) === "Random")) {
+    var r = $m_s_util_Random$();
+    elem$1 = "#";
+    var i = 1;
+    var count = 0;
+    while ((i !== 7)) {
+      var v1 = i;
+      var jsx$1 = $as_T(elem$1);
+      var this$5 = $m_Lme_mfransen_Launcher$().codes$1;
+      var idx = r.self$1.nextInt__I__I(16);
+      elem$1 = (("" + jsx$1) + $s_scm_ResizableArray$class__apply__scm_ResizableArray__I__O(this$5, idx));
+      count = ((1 + count) | 0);
+      i = ((1 + i) | 0)
+    }
+  };
+  var this$7 = this.players$1;
+  var elem$2 = new $c_Lme_mfransen_Player().init___Lme_mfransen_Game__T__T__I__I(null, $as_T(name["value"]), $as_T(elem$1), 32, 32);
+  var this$6 = $m_scm_ArrayBuffer$();
+  var bf = this$6.ReusableCBFInstance$2;
+  this.players$1 = $as_scm_ArrayBuffer($s_sc_SeqLike$class__$$colon$plus__sc_SeqLike__O__scg_CanBuildFrom__O(this$7, elem$2, bf));
   var playerOption = $g["document"]["createElement"]("option");
   playerOption["text"] = $as_T(name["value"]);
   select["selectedIndex"] = 0;

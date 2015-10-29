@@ -4,29 +4,58 @@
     <title>Game of Risks</title>
   </head>
   <body>
-    <div style="outline: 1px solid; display: inline-block">
+    <div style="outline: 1px solid; display: inline-block; float: left; margin: 4">
         <p style="margin: 4">Players: </p>
         <select id="players" size="4" style="margin: 4"></select>
         <p style="margin: 4">Add Player</p>
         <input id="player-name" type="text" placeholder="Name" style="margin: 4">
         <select id="player-color" style="margin: 4">
-            <option>Select a Color</option>
             <option>Red</option>
             <option>Blue</option>
             <option>Green</option>
             <option>Yellow</option>
+            <option>White</option>
+            <option>Gray</option>
+            <option>Purple</option>
+            <option>Random</option>
         </select>
         <button onclick="me.mfransen.Launcher().addPlayer()" style="margin: 4">Add</button>
         <br>
   	    <button id='launch' style="margin: 4" onclick='me.mfransen.Launcher().launch()'>Launch</button>
     </div>
+    <div style="outline: 1px solid; display: inline-block; margin: 4; padding: 4">
+        <h3 style="text-align: center">Rules</h3>
+        <p><i>Life is directly related to the colored portion of circle.</i></p>
+        <p><i>Once you loose all your life, you're out</i></p>
+        <p><i>Last man standing wins.</i></p>
+        <p><i><b>Procedure:</b></i></p>
+        <ol>
+            <li>Roll the die by clicking on it</li>
+            <li>
+                Move as many spaces shown on die
+                <ul>
+                    <li>
+                        If you land on a black space: That space becomes under your control
+                    </li>
+                    <li>
+                        If you land on another players space: You loose one life; answer a question if you answer correctly, it becomes you space.
+                    </li>
+                    <li>
+                        If you land on a star you gain 3 life
+                    </li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+    <div style="display: inline-block">
+        <h1 style="text-align: center">Works Cited</h1>
+        <p>"Health Effects of Cigarette Smoking." <i>Centers for Disease Control and Prevention.</i> Centers for Disease Control and Prevention, 01 Oct. 2015. Web. 28 Oct. 2015.</p>
+        <p>"Alcohol Use." <i>Centers for Disease Control and Prevention</i>. Centers for Disease Control and Prevention, 20 July 2015. Web. 28 Oct. 2015.</p>
+        <p>"Do You Know Some of the Health Risks of Being Overweight?" <i>NIDDK</i>. U.S. DEPARTMENT OF HEALTH AND HUMAN SERVICES, Dec. 2012. Web. 28 Oct. 2015.</p>
+        <p>"Health Risks." <i>Obesity Prevention Source</i>. N.p., 20 Oct. 2012. Web. 28 Oct. 2015.</p>
+        <p>"High Blood Pressure." <i>AIHW</i>. Australian Government, n.d. Web. 28 Oct. 2015.</p>
+    </div>
     <script type="text/javascript" src="./target/scala-2.11/game-of-risks-fastopt.js"></script>
-    <h1 style="text-align: center">Works Cited</h1>
-    <p>"Health Effects of Cigarette Smoking." <i>Centers for Disease Control and Prevention.</i> Centers for Disease Control and Prevention, 01 Oct. 2015. Web. 28 Oct. 2015.</p>
-  	<p>"Alcohol Use." <i>Centers for Disease Control and Prevention</i>. Centers for Disease Control and Prevention, 20 July 2015. Web. 28 Oct. 2015.</p>
-    <p>"Do You Know Some of the Health Risks of Being Overweight?" <i>NIDDK</i>. U.S. DEPARTMENT OF HEALTH AND HUMAN SERVICES, Dec. 2012. Web. 28 Oct. 2015.</p>
-    <p>"Health Risks." <i>Obesity Prevention Source</i>. N.p., 20 Oct. 2012. Web. 28 Oct. 2015.</p>
-    <p>"High Blood Pressure." <i>AIHW</i>. Australian Government, n.d. Web. 28 Oct. 2015.</p>
     <script>me.mfransen.Launcher().main()</script>
   </body>
 </html>

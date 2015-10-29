@@ -6,11 +6,13 @@ import org.scalajs.dom.raw._
 import scala.collection.mutable.ArrayBuffer
 import scala.scalajs.js.JSApp
 import scala.scalajs.js.annotation.JSExport
+import scala.util.Random
 
 object Launcher extends JSApp {
   var windowHTML = "<html><head><title>Game of Risks</title></head><body style='margin: 0; padding: 0'><canvas id='game' style='margin: 0; padding: 0' width='640', height='640'></canvas></body></html>"
   var game: Game = null
   var players = ArrayBuffer[Player]()
+  var codes = ArrayBuffer[String]("0","1","2","3","4","5","6","7","8","9","a","b","c","d","e","f")
   def main(): Unit = {
   }
   @JSExport
@@ -36,7 +38,15 @@ object Launcher extends JSApp {
   def addPlayer(event: MouseEvent): Unit = {
     val select = document.getElementById("player-color").asInstanceOf[HTMLSelectElement]
     val name = document.getElementById("player-name").asInstanceOf[HTMLInputElement]
-    players:+= new Player(null,name.value,select.options(select.selectedIndex).asInstanceOf[HTMLOptionElement].text,32,32)
+    var color = select.options(select.selectedIndex).asInstanceOf[HTMLOptionElement].text
+    if(color == "Random") {
+      val r = Random
+      color = "#"
+      for(i <- 1 to 6) {
+        color += codes(r.nextInt(16))
+      }
+    }
+    players:+= new Player(null,name.value,color,32,32)
     val playerOption = document.createElement("option").asInstanceOf[HTMLOptionElement]
     playerOption.text = name.value
     select.selectedIndex = 0
